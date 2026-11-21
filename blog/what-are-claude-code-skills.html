@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>وش هي السكلز (Skills) في Claude Code وكيف تركّبها؟ | يعقوب الظفيري</title>
+<meta name="description" content="السكلز مجلدات فيها تعليمات يستخدمها Claude لما يحتاجها. تعرّف وش هي، وين تنحط، وكيف تركّبها بأمان.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../"><img src="../img/yaqoub.webp" width="42" height="42" alt=""><span>يعقوب الظفيري<small>خبير الذكاء الاصطناعي</small></span></a>
+    <nav aria-label="روابط الموقع"><a href="../">الأدوات</a><a href="./">المدونة</a></nav>
+  </header>
+  <article>
+    <div class="meta"><span class="tag">Claude Code</span><span>17 نوفمبر 2026</span><span>قراءة 5 دقائق</span></div>
+    <h1>وش هي السكلز (Skills) في Claude Code وكيف تركّبها؟</h1>
+    <p class="lead">السكلز مجلدات فيها تعليمات يستخدمها Claude لما يحتاجها. تعرّف وش هي، وين تنحط، وكيف تركّبها بأمان.</p>
+    <p>تخيل إن عندك موظف شاطر، وكل ما احتجت شغلة معينة تعطيه دليل مكتوب يمشي عليه. السكلز في Claude Code نفس الفكرة: دليل جاهز يفتحه Claude لما تكون المهمة تحتاجه.</p><h2>وش هي السكل بالضبط؟</h2><p>السكل عبارة عن مجلد فيه ملف اسمه <code>SKILL.md</code>. أول الملف فيه جزء YAML بسيط يحدد اسم السكل ووصفها، وبعده التعليمات نفسها. وممكن يكون في المجلد ملفات ثانية مثل قوالب أو سكربتات تستخدمها السكل.</p><p>الشي الذكي إن Claude ما يقرأ كل السكلز كاملة من البداية. يشوف الاسم والوصف، وإذا طلبك يناسب سكل معينة يفتح تعليماتها ويشتغل عليها. عشان كذا الوصف مهم جدًا.</p><h2>وين تنحط السكلز؟</h2><div class="tbl"><table><thead><tr><th>المكان</th><th>لمين</th></tr></thead><tbody><tr><td><code>~/.claude/skills/</code></td><td>سكلز شخصية، متاحة لك في كل مشاريعك</td></tr><tr><td><code>.claude/skills/</code> داخل المشروع</td><td>سكلز خاصة بالمشروع، وتقدر تشاركها مع فريقك عن طريق git</td></tr></tbody></table></div><p>وشكل المجلد يكون كذا:</p><div class="term"><pre>~/.claude/skills/
+  meeting-notes/
+    SKILL.md
+    template.md</pre></div><h2>طرق التركيب</h2><h3>1. يدويًا</h3><p>انسخ مجلد السكل كامل وحطه في واحد من المكانين فوق. تأكد إن ملف <code>SKILL.md</code> موجود مباشرة داخل مجلد السكل، مو داخل مجلد فرعي ثاني.</p><h3>2. عن طريق البلقنز (Plugins)</h3><p>بعض السكلز توصلك ضمن بلقن. تضيف المتجر (Marketplace) أول، بعدين تركّب البلقن:</p><div class="term"><pre>/plugin marketplace add &lt;owner/repo&gt;
+/plugin install &lt;plugin-name&gt;</pre></div><p>تقدر تشوف أمثلة رسمية على السكلز في github.com/anthropics/skills.</p><h2>تأكد إنها اشتغلت</h2><p>افتح جلسة جديدة واسأل Claude مباشرة:</p><div class="term"><pre>وش السكلز المتاحة عندك الحين؟ واشرح لي باختصار متى تستخدم كل وحدة.</pre></div><p>بعدها جرّب طلب يناسب وصف السكل، وشوف هل Claude استخدمها.</p><div class="note"><b>أمان:</b> السكل ممكن تحتوي سكربتات تنفذ أوامر على جهازك. ركّب بس من مصادر تثق فيها، واقرأ محتوى <code>SKILL.md</code> والملفات اللي معه قبل الاستخدام.</div><h2>السكل ولا CLAUDE.md؟</h2><h3>متى تحتاج سكل؟</h3><p>لو لاحظت نفسك تكتب نفس التعليمات الطويلة لـ Claude أكثر من مرة، هذي إشارة واضحة. أمثلة: صياغة عروض أسعار بقالب شركتك، كتابة محاضر الاجتماعات بشكل موحد، أو مراجعة الكود حسب قواعد فريقك. حوّل هالتعليمات لسكل مرة وحدة، وخلّ Claude يرجع لها لحاله كل ما احتاجها. وفي المقال الجاي نشرح كيف تسوي سكل خاصة فيك من الصفر.</p><p>ملف CLAUDE.md يتحمّل في كل جلسة داخل المشروع، فهو مناسب للمعلومات العامة اللي Claude يحتاجها دايم. السكل مناسبة لمهمة محددة لها خطوات واضحة، مثل كتابة تقرير بصيغة ثابتة أو مراجعة كود بطريقة معينة. Claude يفتحها بس لما يحتاجها، فما تزحم السياق.</p>
+    <a class="back" href="./">→ رجوع لكل المقالات</a>
+  </article>
+  <section class="author" aria-label="عن الكاتب">
+    <img src="../img/yaqoub.webp" width="96" height="96" alt="صورة يعقوب الظفيري" loading="lazy">
+    <div>
+      <h2>يعقوب الظفيري</h2>
+      <p>خبير الذكاء الاصطناعي. أشرح أدوات الذكاء الاصطناعي بالعربي وبشكل عملي.</p>
+      <div class="social">
+      <a class="soc tt" href="https://www.tiktok.com/@yaqoubaldhafeeri1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>تيك توك</a>
+      <a class="soc wa" href="https://wa.me/966544956205" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>واتساب</a>
+      <a class="soc ph" href="tel:+966544956205"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>اتصال</a>
+    </div>
+    </div>
+  </section>
+  <footer><span><strong>يعقوب الظفيري</strong> · خبير الذكاء الاصطناعي</span><span>© 2026</span></footer>
+</div>
+</body>
+</html>

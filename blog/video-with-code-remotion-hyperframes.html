@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>فيديو بالكود: Remotion وHyperFrames للمبتدئين | يعقوب الظفيري</title>
+<meta name="description" content="تقدر تصنع فيديو بكتابة كود بدل برامج المونتاج. تعرّف على Remotion المبني على React وHyperFrames المبني على HTML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../"><img src="../img/yaqoub.webp" width="42" height="42" alt=""><span>يعقوب الظفيري<small>خبير الذكاء الاصطناعي</small></span></a>
+    <nav aria-label="روابط الموقع"><a href="../">الأدوات</a><a href="./">المدونة</a></nav>
+  </header>
+  <article>
+    <div class="meta"><span class="tag">برمجة</span><span>27 أكتوبر 2026</span><span>قراءة 6 دقائق</span></div>
+    <h1>فيديو بالكود: Remotion وHyperFrames للمبتدئين</h1>
+    <p class="lead">تقدر تصنع فيديو بكتابة كود بدل برامج المونتاج. تعرّف على Remotion المبني على React وHyperFrames المبني على HTML.</p>
+    <p>تخيل إنك تطلب من Claude Code فيديو قصير يعرض أرقام مشروعك بحركة حلوة، ويطلع لك ملف فيديو جاهز. هذا ممكن لأن فيه أدوات تخليك تصنع الفيديو بالكود.</p><h2>ليش فيديو بالكود؟</h2><ul><li><strong>التكرار سهل:</strong> تغيّر النص أو الرقم وتطلع نسخة جديدة بدون مونتاج من الصفر.</li><li><strong>الذكاء الاصطناعي يفهم الكود:</strong> تقدر تطلب التعديل بالكلام.</li><li><strong>قوالب:</strong> تسوي قالب واحد وتستخدمه لعشرات الفيديوهات.</li></ul><h2>Remotion: فيديو بـ React</h2><p>Remotion أداة تخليك تبني الفيديو كمكونات React. كل فريم في الفيديو عبارة عن صفحة ترسمها بالكود، وتتحكم في الحركة حسب رقم الفريم. بعدها تصدّر الفيديو كملف. موقعها الرسمي <code>remotion.dev</code> وفيه الشرح الكامل.</p><p>تبدأ مشروع جديد بهالأمر:</p><div class="term"><pre>npx create-video@latest</pre></div><p>بعدها يفتح لك محرر في المتصفح تشوف فيه الفيديو وتتنقل بين الفريمات.</p><div class="note"><b>مهم:</b> راجع شروط الرخصة في موقع Remotion قبل الاستخدام التجاري، لأن لها شروط حسب نوع الاستخدام.</div><h2>HyperFrames: فيديو بـ HTML</h2><p>HyperFrames من HeyGen، وفكرتها إنك تكتب الفيديو كصفحة HTML. لو تعرف HTML وCSS، أو حتى لو بتخلي الذكاء الاصطناعي يكتبها عنك، الفكرة قريبة من بناء صفحة ويب عادية، والنتيجة تتحول لفيديو.</p><h2>أيهم أختار؟</h2><div class="tbl"><table><tr><th></th><th>Remotion</th><th>HyperFrames</th></tr><tr><td>الأساس</td><td>React</td><td>HTML</td></tr><tr><td>يناسب</td><td>اللي مرتاح مع React ويبغى تحكم كامل</td><td>اللي يبغى يبدأ من صفحة HTML بسيطة</td></tr></table></div><p>لو أنت مبتدئ تماماً، جرّب الاثنين بفيديو بسيط واشوف أيهم أريح لك.</p><h2>خطوات أول فيديو مع Claude Code</h2><ol><li>سوّ مجلد جديد وافتح فيه Claude Code.</li><li>اطلب منه يجهز المشروع بالأداة اللي اخترتها.</li><li>وصّف الفيديو مشهد مشهد: النص، المدة، الحركة.</li><li>شغّل المعاينة وشوف النتيجة، واطلب تعديلات محددة.</li><li>صدّر الفيديو بالمقاس المناسب للمنصة، مثل الطولي للمقاطع القصيرة.</li></ol><div class="term"><pre>جهّز لي مشروع Remotion جديد في هذا المجلد.
+أبغى فيديو طولي مدته 15 ثانية:
+المشهد 1 (0-4 ثواني): عنوان كبير بالعربي يقول: وش الجديد عندنا؟
+المشهد 2 (4-11 ثانية): ثلاث نقاط تظهر وحدة وحدة بحركة ناعمة.
+المشهد 3 (11-15 ثانية): اسم المشروع ودعوة للمتابعة.
+النص من اليمين لليسار، وخط عربي واضح، وخلفية هادية.
+بعد ما تخلّص قول لي كيف أشغل المعاينة وكيف أصدّر الفيديو.</pre></div><h2>نصائح للبداية</h2><ul><li>ابدأ بفيديو قصير ومشاهد قليلة، وبعدين زيد.</li><li>وصّف الحركة بكلمات واضحة مثل: يظهر من تحت، يكبر شوي، يختفي تدريجياً.</li><li>لو عجبك فيديو، اطلب منه يحوله لقالب تغير فيه النص والألوان بسهولة.</li><li>راجع الخط العربي واتجاه النص في المعاينة قبل التصدير.</li></ul><p>وتذكر إن الفيديو بالكود ما يلغي الإبداع. الفكرة والقصة والتوقيت قرارك أنت، والكود بس طريقة تنفيذ أسرع وأسهل في التكرار.</p>
+    <a class="back" href="./">→ رجوع لكل المقالات</a>
+  </article>
+  <section class="author" aria-label="عن الكاتب">
+    <img src="../img/yaqoub.webp" width="96" height="96" alt="صورة يعقوب الظفيري" loading="lazy">
+    <div>
+      <h2>يعقوب الظفيري</h2>
+      <p>خبير الذكاء الاصطناعي. أشرح أدوات الذكاء الاصطناعي بالعربي وبشكل عملي.</p>
+      <div class="social">
+      <a class="soc tt" href="https://www.tiktok.com/@yaqoubaldhafeeri1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg>تيك توك</a>
+      <a class="soc wa" href="https://wa.me/966544956205" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>واتساب</a>
+      <a class="soc ph" href="tel:+966544956205"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>اتصال</a>
+    </div>
+    </div>
+  </section>
+  <footer><span><strong>يعقوب الظفيري</strong> · خبير الذكاء الاصطناعي</span><span>© 2026</span></footer>
+</div>
+</body>
+</html>
