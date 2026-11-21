@@ -125,6 +125,30 @@ footer strong{color:var(--fg);font-family:var(--f-display)}
 
 .me .social{margin-top:4px;justify-content:center}
 @media (max-width:760px){.me{flex-wrap:wrap}.me .social{justify-content:flex-start;width:100%}}
+
+/* responsive fixes */
+.chip{display:inline-flex;align-items:center;gap:8px}
+.chip .n{margin:0;font-size:12px;padding:0 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);line-height:20px;opacity:1}
+.chip[aria-pressed="true"] .n{background:rgba(255,255,255,.22);color:inherit}
+@media (min-width:900px){.chips{flex-wrap:wrap;overflow:visible}}
+@media (max-width:899px){.chips{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scroll-padding-inline:16px}}
+.me .social{flex-direction:column;width:100%;max-width:240px;gap:8px}
+.me .soc{width:100%;justify-content:flex-start}
+@media (max-width:760px){
+  .hero{padding-block:24px 16px}
+  .me{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;align-items:center;text-align:right}
+  .me img{grid-row:span 2;width:84px;height:84px}
+  .me figcaption{align-self:end}
+  .me .social{grid-column:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;gap:6px;margin:0}
+  .me .soc{flex-direction:column;justify-content:center;gap:2px;min-height:52px;padding:6px 4px;text-align:center}
+  .me .soc svg{width:20px;height:20px}
+  .me .soc span{align-items:center;font-size:12.5px}
+  .me .soc small{display:none}
+  .stats{gap:20px}
+  .stats b{font-size:24px}
+  .grid{grid-template-columns:1fr}
+  .top nav a{padding:8px 10px;font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -355,7 +379,7 @@ document.getElementById('stats').innerHTML=
  '<div><b>'+total+'</b><span>أداة وأمر وسكل</span></div><div><b>'+CATS.length+'</b><span>قسم</span></div><div><b>عربي</b><span>شرح بسيط</span></div>';
 
 var active='all';
-function chip(id,label,n){return '<button class="chip" type="button" data-f="'+id+'" aria-pressed="'+(id===active)+'">'+label+'<span class="n">'+n+'</span></button>'}
+function chip(id,label,n){return '<button class="chip" type="button" data-f="'+id+'" aria-pressed="'+(id===active)+'"><bdi>'+label+'</bdi><span class="n">'+n+'</span></button>'}
 chips.innerHTML=chip('all','الكل',total)+CATS.map(function(c){return chip(c.id,c.title,c.items.length)}).join('');
 
 var q=document.getElementById('q'),empty=document.getElementById('empty');
