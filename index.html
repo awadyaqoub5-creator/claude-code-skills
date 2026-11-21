@@ -77,7 +77,8 @@ section.cat[hidden]{display:none}
 .card .name{font-family:var(--f-mono);font-weight:600;font-size:15px;color:var(--accent);direction:ltr;text-align:right;word-break:break-word}
 .card p{margin:0;font-size:15px;line-height:1.7}
 .card .ex{margin-top:auto;padding-top:8px;display:flex;gap:8px;align-items:center;min-width:0}
-.card .ex code{flex:1;min-width:0;background:var(--accent-soft);color:var(--fg);border-radius:6px;padding:6px 8px;font-size:13px;overflow-x:auto;white-space:nowrap;text-align:left}
+.card .ex code{flex:1;min-width:0;background:var(--accent-soft);color:var(--fg);border-radius:6px;padding:6px 8px;font-size:13px;overflow-x:auto;white-space:nowrap;direction:rtl;unicode-bidi:plaintext;text-align:start;font-family:var(--f-body)}
+.card .ex code.cmd{font-family:var(--f-mono)}
 .badge{align-self:flex-start;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
 button.copy{flex:0 0 auto;font:500 13px var(--f-body);color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:8px;min-height:36px;min-width:52px;padding:0 10px;cursor:pointer;transition:background-color .2s,color .2s}
 button.copy:hover{background:var(--accent-soft)}
@@ -264,7 +265,7 @@ CATS.forEach(function(c){
   c.items.forEach(function(it){
     var ex=it[2]&&it[2]!=="—";
     h+='<article class="card" data-s="'+esc((it[0]+' '+it[1]+' '+(it[2]||'')+' '+c.title).toLowerCase())+'"><div class="name">'+esc(it[0])+'</div><p>'+esc(it[1])+'</p>'+
-      (ex?'<div class="ex"><code>'+esc(it[2])+'</code><button class="copy" type="button" data-copy="'+esc(it[2])+'" aria-label="نسخ: '+esc(it[2])+'">نسخ</button></div>':'')+'</article>';
+      (ex?'<div class="ex"><code'+(/^\//.test(it[2])?' class="cmd"':'')+'>'+esc(it[2])+'</code><button class="copy" type="button" data-copy="'+esc(it[2])+'" aria-label="نسخ: '+esc(it[2])+'">نسخ</button></div>':'')+'</article>';
   });
   sec.insertAdjacentHTML('beforeend',h+'</div></section>');
 });
