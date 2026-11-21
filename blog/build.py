@@ -68,6 +68,7 @@ FOOTER = f'''
 
 # --- article pages
 for i, p in enumerate(posts):
+    p["img"] = f"img/{p['slug']}-640.webp"
     d = start - datetime.timedelta(days=i + 1)
     p["date"] = ar_date(d)
     page = head(f"{p['title']} | يعقوب الظفيري", p["summary"]) + f'''
@@ -76,6 +77,7 @@ for i, p in enumerate(posts):
     <div class="meta"><span class="tag">{html.escape(p["tag"])}</span><span>{p["date"]}</span><span>قراءة {p["minutes"]} دقائق</span></div>
     <h1>{html.escape(p["title"])}</h1>
     <p class="lead">{html.escape(p["summary"])}</p>
+    <img class="cover" src="img/{p["slug"]}.webp" srcset="img/{p["slug"]}-640.webp 640w, img/{p["slug"]}.webp 1280w" sizes="(max-width:760px) 100vw, 760px" width="1280" height="716" alt="">
     {p["body"]}
     <a class="back" href="./">→ رجوع لكل المقالات</a>
   </article>{AUTHOR}{FOOTER}
@@ -90,7 +92,7 @@ cards = []
 for p in EXTERNAL + posts:
     url = p.get("url") or (p["slug"] + ".html")
     ext = ' target="_blank" rel="noopener"' if p.get("url") else ""
-    visual = f'<img src="{p["img"]}" alt="" loading="lazy" width="768" height="430">' if p.get("img") else f'<div class="ph" aria-hidden="true">AI</div>'
+    visual = f'<img src="{p["img"]}" alt="" loading="lazy" width="640" height="358">' if p.get("img") else f'<div class="ph" aria-hidden="true">AI</div>'
     meta = f'<span class="tag">{html.escape(p["tag"])}</span><span>قراءة {p["minutes"]} دقائق</span>'
     cards.append(f'''    <li class="post" data-tag="{html.escape(p["tag"])}"><a href="{url}"{ext}>{visual}<div class="b"><div class="meta">{meta}</div><h2>{html.escape(p["title"])}</h2><p>{html.escape(p["summary"])}</p><span class="more">اقرأ المقال ←</span></div></a></li>''')
 

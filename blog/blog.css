@@ -55,6 +55,7 @@ article{padding-top:32px}
 article .meta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
 article h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.35;margin:12px 0 12px;text-wrap:balance}
 article .lead{font-size:19px;margin:0 0 8px}
+article .cover{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;margin:20px 0 8px;background:var(--accent-soft)}
 article h2{font-family:var(--f-display);font-weight:700;font-size:24px;margin:44px 0 12px;text-wrap:balance}
 article h3{font-family:var(--f-display);font-weight:500;font-size:19px;margin:24px 0 6px}
 article p{margin:0 0 14px}

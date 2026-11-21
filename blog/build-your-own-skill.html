@@ -19,6 +19,7 @@
     <div class="meta"><span class="tag">Claude Code</span><span>16 نوفمبر 2026</span><span>قراءة 6 دقائق</span></div>
     <h1>سوّ سكل خاص فيك خطوة بخطوة (مع مثال SKILL.md كامل)</h1>
     <p class="lead">خطوات عملية تبني فيها أول سكل لك في Claude Code، مع مثال كامل لسكل تكتب تقرير أسبوعي بالعربي.</p>
+    <img class="cover" src="img/build-your-own-skill.webp" srcset="img/build-your-own-skill-640.webp 640w, img/build-your-own-skill.webp 1280w" sizes="(max-width:760px) 100vw, 760px" width="1280" height="716" alt="">
     <p>لو عندك شغلة تتكرر كل أسبوع وتشرح لـ Claude نفس التعليمات كل مرة، هذي علامة إنك تحتاج سكل. تكتب التعليمات مرة وحدة، وClaude يرجع لها لحاله كل ما احتاجها.</p><h2>الخطوة 1: حدد المهمة</h2><p>اختر مهمة واضحة ومحددة. مثالنا اليوم: تقرير أسبوعي بالعربي بصيغة ثابتة يرفعه الموظف لمديره. كل ما كانت المهمة أضيق، كل ما كانت السكل أدق.</p><h2>الخطوة 2: سوّ المجلد</h2><p>السكلز الشخصية مكانها <code>~/.claude/skills/</code>. سوّ مجلد باسم السكل:</p><div class="term"><pre>mkdir -p ~/.claude/skills/weekly-report</pre></div><p>ولو تبغاها خاصة بمشروع معين ويشاركك فيها فريقك، حطها في <code>.claude/skills/</code> داخل المشروع.</p><h2>الخطوة 3: اكتب ملف SKILL.md</h2><p>داخل المجلد سوّ ملف <code>SKILL.md</code>. هذا مثال كامل تقدر تنسخه وتعدل عليه:</p><div class="term"><pre>---
 name: weekly-report
 description: يكتب تقرير أسبوعي بالعربي بصيغة ثابتة للمدير المباشر. استخدمه لما يطلب المستخدم تقرير أسبوعي أو ملخص إنجازات الأسبوع.

@@ -19,6 +19,7 @@
     <div class="meta"><span class="tag">Claude Code</span><span>17 نوفمبر 2026</span><span>قراءة 5 دقائق</span></div>
     <h1>وش هي السكلز (Skills) في Claude Code وكيف تركّبها؟</h1>
     <p class="lead">السكلز مجلدات فيها تعليمات يستخدمها Claude لما يحتاجها. تعرّف وش هي، وين تنحط، وكيف تركّبها بأمان.</p>
+    <img class="cover" src="img/what-are-claude-code-skills.webp" srcset="img/what-are-claude-code-skills-640.webp 640w, img/what-are-claude-code-skills.webp 1280w" sizes="(max-width:760px) 100vw, 760px" width="1280" height="716" alt="">
     <p>تخيل إن عندك موظف شاطر، وكل ما احتجت شغلة معينة تعطيه دليل مكتوب يمشي عليه. السكلز في Claude Code نفس الفكرة: دليل جاهز يفتحه Claude لما تكون المهمة تحتاجه.</p><h2>وش هي السكل بالضبط؟</h2><p>السكل عبارة عن مجلد فيه ملف اسمه <code>SKILL.md</code>. أول الملف فيه جزء YAML بسيط يحدد اسم السكل ووصفها، وبعده التعليمات نفسها. وممكن يكون في المجلد ملفات ثانية مثل قوالب أو سكربتات تستخدمها السكل.</p><p>الشي الذكي إن Claude ما يقرأ كل السكلز كاملة من البداية. يشوف الاسم والوصف، وإذا طلبك يناسب سكل معينة يفتح تعليماتها ويشتغل عليها. عشان كذا الوصف مهم جدًا.</p><h2>وين تنحط السكلز؟</h2><div class="tbl"><table><thead><tr><th>المكان</th><th>لمين</th></tr></thead><tbody><tr><td><code>~/.claude/skills/</code></td><td>سكلز شخصية، متاحة لك في كل مشاريعك</td></tr><tr><td><code>.claude/skills/</code> داخل المشروع</td><td>سكلز خاصة بالمشروع، وتقدر تشاركها مع فريقك عن طريق git</td></tr></tbody></table></div><p>وشكل المجلد يكون كذا:</p><div class="term"><pre>~/.claude/skills/
   meeting-notes/
     SKILL.md
