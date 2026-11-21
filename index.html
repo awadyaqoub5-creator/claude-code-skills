@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>دليل أدوات Claude Code | يعقوب الظفيري</title>
+<title>دليل أدوات Claude | يعقوب الظفيري</title>
 <meta name="description" content="كل أدوات وسكلز وأوامر Claude Code في مكان واحد، بالعربي، مع طريقة الاستخدام وأمثلة جاهزة للنسخ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Readex+Pro:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -116,8 +116,8 @@ footer strong{color:var(--fg);font-family:var(--f-display)}
 
   <section class="hero">
     <div class="hero-text">
-    <h1>كل أدوات <span>Claude Code</span> في صفحة وحدة</h1>
-    <p>الأدوات المدمجة، الأوامر، السكلز، والإضافات. كل وحدة مشروحة بسطر واضح، ومعها مثال تنسخه وتجربه على طول.</p>
+    <h1>كل أدوات <span>Claude</span> في صفحة وحدة</h1>
+    <p>تطبيقات Claude ومزاياه والموديلات، وكل أدوات وسكلز وأوامر Claude Code. كل وحدة مشروحة بسطر واضح، ومعها مثال تنسخه وتجربه على طول.</p>
     <div class="stats" id="stats"></div>
     </div>
     <figure class="me">
@@ -172,32 +172,59 @@ description: متى يستخدمه Claude
 
   <footer>
     <span><strong>يعقوب الظفيري</strong> · أدلة عملية في الذكاء الاصطناعي</span>
-    <span>الأسماء والأوامر ممكن تتغير مع تحديثات Claude Code</span>
+    <span>المصدر: مواقع Anthropic الرسمية. الأسماء ممكن تتغير مع التحديثات</span>
   </footer>
 </div>
 <p id="live" class="sr" aria-live="polite"></p>
 
 <script>
 var CATS=[
- {id:"mine",title:"سكلزي الخاصة",desc:"سكلز سويتها بنفسي لشغلي اليومي في التدريب والمبيعات والمحتوى.",items:[
-  ["masartech-content-strategy","يخطط مقالات وأدلة عربية تجيب متدربين لدورات مسارتك مثل PMP وPower BI.","سوّ خطة محتوى لدورة PMP"],
-  ["masartech-seo-audit","فحص SEO تقني ومحتوى ومحلي لموقع مسارتك مقارنة بالمنافسين.","ليش موقعنا ما يطلع في قوقل؟"],
-  ["masartech-schema","يكتب JSON-LD لصفحات الدورات والأسئلة الشائعة جاهز للمطور.","سوّ سكيما لصفحة دورة PMP"],
-  ["masartech-ads-specialist","يطلق ويدير حملات Google وMeta لدورات مسارتك.","خطة حملة لدورة Power BI"],
-  ["masartech-b2b-sales-ops","يصنّف إيميلات الشركات ويجهز المتابعات ويلخص أرقام المبيعات.","جهز متابعات هالأسبوع"],
-  ["masartech-course-pricing-calculator","يحسب تكلفة الدورة وسعر المقعد والربح ونقطة التعادل.","سعّر دورة 5 أيام لـ 12 متدرب"],
-  ["masartech-tiktok-content-creator","يحوّل الشهادات والدورات لمحتوى تيك توك.","فكرة فيديو عن شهادة PMP"],
-  ["masartech-tiktok-visual-designer","يصمم فيديوهات وكاروسيل وجرافيك تيك توك بهوية مسارتك.","سوّ كاروسيل عن مسارات الموارد البشرية"],
+ {id:"mine",title:"سكلزي الخاصة",desc:"سكلز سويتها بنفسي لشغلي اليومي في المحتوى والمبيعات والتدريب.",items:[
   ["yaqoub-hook-maker","يصنع هوكات سعودية قوية للمحتوى القصير.","أبغى 10 هوكات عن تطوير المسار المهني"],
   ["yaqoub-tiktok-growth-studio","يخطط ويكتب ويحلل محتوى حسابي الشخصي في تيك توك.","حلل أداء آخر 5 فيديوهات"],
   ["sam-content-os","مدير محتوى ريلز: هوك وفويس أوفر وكابشن وخطة مونتاج وتقييم من 100.","سوّ ريل عن Claude Code"],
-  ["b2c-course-sales","يرد على استفسارات العملاء ويعالج الاعتراضات ويرشّح الدورة المناسبة.","عميل يقول السعر غالي"],
   ["saudi-b2b-training-sales-expert","مبيعات التدريب المؤسسي في السعودية: تنقيب وتأهيل وتواصل.","اكتب رسالة لمدير موارد بشرية"],
   ["ksa-professional-certification-institute-manager","إدارة وتشغيل معهد تدريب للشهادات الاحترافية في السعودية.","خطة تشغيل للربع الجاي"],
   ["camp-program-designer","يصمم معسكرات تدريبية عملية تناسب سوق العمل.","صمم معسكر 4 أسابيع في تحليل البيانات"],
   ["pro-trader","منهج تعليم التداول بالتحليل الفني والأساسي.","اشرح لي الدعم والمقاومة"],
   ["jawasim-poet","يكتب شيلات وقصايد نبطية للمناسبات والمدح والترحيب.","قصيدة ترحيب بالضيوف"],
   ["motion-broll","يحوّل فيديو متكلم لموشن جرافيك متزامن مع الكلام.","سوّ B-roll لهالفيديو"]
+ ]},
+ {id:"apps",title:"تطبيقات Claude",desc:"المنتجات اللي تستخدمها مباشرة، من الجوال للمتصفح لبيئة البرمجة.",items:[
+  ["Claude","التطبيق الأساسي للمحادثة. موجود على المتصفح والكمبيوتر والجوال.","claude.ai"],
+  ["Claude Code","مساعد البرمجة. يشتغل في الطرفية وتطبيق الكمبيوتر والمتصفح والجوال، ومعه إضافات VS Code وJetBrains.","npm install -g @anthropic-ai/claude-code"],
+  ["Cowork","يسلّم Claude مهام طويلة على ملفاتك وجهازك. Anthropic تقول إن قدراته صارت جزء من Claude نفسه.","رتّب ملفات مجلد التنزيلات"],
+  ["Claude in Chrome","إضافة للمتصفح: Claude يقرأ الصفحات ويضغط ويعبّي النماذج بدالك.","لخّص لي هالصفحة وقارن الأسعار"],
+  ["Claude for Microsoft 365","إضافات داخل Excel وPowerPoint وWord.","حلل هالجدول وسوّ رسم بياني"],
+  ["Claude Tag","Claude داخل Slack. أي أحد في الفريق يكتب ‎@Claude ويعطيه مهمة.","@Claude لخّص نقاش القناة"],
+  ["Claude Design","من Anthropic Labs: تصاميم ونماذج أولية وشرائح وصفحات تعريفية.","صمم صفحة هبوط لدورة"]
+ ]},
+ {id:"features",title:"مزايا داخل Claude",desc:"أشياء تستخدمها داخل المحادثة نفسها.",items:[
+  ["Projects","مساحة فيها ملفاتك وتعليماتك، وكل محادثة داخلها تعرف السياق.","—"],
+  ["Artifacts","صفحات وتطبيقات ومستندات يسويها Claude وتقدر تشاركها برابط.","سوّ لي حاسبة سعرات"],
+  ["Docs / Sheets / Slides","أنواع Artifacts جاهزة للمستندات والجداول والعروض، وتنزّلها Word أو Excel أو PowerPoint أو PDF.","سوّ عرض 8 شرائح عن مشروعي"],
+  ["Research","بحث معمّق من مصادر كثيرة ويطلع لك تقرير بمراجع.","ابحث عن سوق التدريب في السعودية"],
+  ["Web search","يبحث في الإنترنت لما يحتاج معلومة حديثة.","وش آخر أخبار الذكاء الاصطناعي؟"],
+  ["Memory","يتذكر تفضيلاتك ومعلوماتك بين المحادثات.","تذكر إني أكتب باللهجة السعودية"],
+  ["Connectors","يربط Claude بخدماتك مثل Google Drive وGmail وNotion وGitHub عن طريق MCP.","—"],
+  ["Skills","تعليمات وملفات جاهزة يستخدمها Claude لمهام محددة.","—"],
+  ["Voice mode","تكلّم Claude بصوتك ويرد عليك بصوت.","—"]
+ ]},
+ {id:"devs",title:"للمطورين",desc:"لو تبغى تبني منتجك الخاص فوق Claude.",items:[
+  ["Claude API","الواجهة البرمجية: ترسل رسالة وتستقبل رد من الموديل.","platform.claude.com"],
+  ["Claude Agent SDK","مكتبة تبني فيها agents بنفس محرك Claude Code.","npm install @anthropic-ai/claude-agent-sdk"],
+  ["Managed Agents","agents تشتغل على سيرفرات Anthropic في بيئة آمنة جاهزة.","—"],
+  ["Tool use","تعطي Claude أدوات (دوال) ويقرر متى يستدعيها.","—"],
+  ["MCP","بروتوكول مفتوح لربط Claude بأي أداة أو مصدر بيانات.","modelcontextprotocol.io"],
+  ["Prompt caching","تخزين الأجزاء المكررة من البرومبت عشان توفر وتسرّع.","—"],
+  ["Batch API","ترسل طلبات كثيرة مرة وحدة بتكلفة أقل.","—"],
+  ["Computer use","Claude يتحكم بشاشة كمبيوتر: يشوف ويضغط ويكتب.","—"]
+ ]},
+ {id:"models",title:"موديلات Claude",desc:"العائلة الحالية Claude 5. اختار حسب الحاجة بين القوة والسرعة والتكلفة.",items:[
+  ["claude-fable-5-2","Fable 5.2: من عائلة Claude 5.","claude-fable-5-2"],
+  ["claude-opus-5-5","Opus 5.5: للمهام الصعبة والتفكير العميق والبرمجة الكبيرة.","claude-opus-5-5"],
+  ["claude-sonnet-5-5","Sonnet 5.5: توازن بين القوة والسرعة، يناسب أغلب الشغل.","claude-sonnet-5-5"],
+  ["claude-haiku-5-5","Haiku 5.5: الأسرع والأرخص، للمهام الخفيفة والكثيرة.","claude-haiku-5-5"]
  ]},
  {id:"tools",title:"الأدوات المدمجة",desc:"الأدوات اللي يستخدمها Claude بنفسه وهو يشتغل. ما تحتاج تكتبها، تطلب الشي بكلامك وهو يختار الأداة.",items:[
   ["Read","يقرأ أي ملف: كود، صور، PDF، ودفاتر Jupyter.","اقرأ ملف package.json"],
