@@ -130,7 +130,12 @@ footer strong{color:var(--fg);font-family:var(--f-display)}
 .chip{display:inline-flex;align-items:center;gap:8px}
 .chip .n{margin:0;font-size:12px;padding:0 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);line-height:20px;opacity:1}
 .chip[aria-pressed="true"] .n{background:rgba(255,255,255,.22);color:inherit}
-@media (min-width:900px){.chips{flex-wrap:wrap;overflow:visible}}
+@media (min-width:900px){
+  .bar{display:contents}
+  .search{display:block;position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);padding-block:12px}
+  .search svg{top:calc(50%)}
+  .chips{flex-wrap:wrap;overflow:visible;margin:4px 0 12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+}
 @media (max-width:899px){.chips{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scroll-padding-inline:16px}}
 .me .social{flex-direction:column;width:100%;max-width:240px;gap:8px}
 .me .soc{width:100%;justify-content:flex-start}
@@ -155,7 +160,7 @@ footer strong{color:var(--fg);font-family:var(--f-display)}
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#">يعقوب الظفيري<small>أدلة عملية في الذكاء الاصطناعي</small></a>
-    <nav aria-label="روابط الصفحة"><a href="#list">الأدوات</a><a href="#howto">طريقة التركيب</a></nav>
+    <nav aria-label="روابط الصفحة"><a href="#q">الأدوات</a><a href="#howto">طريقة التركيب</a></nav>
   </header>
 
   <section class="hero">
