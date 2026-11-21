@@ -354,7 +354,7 @@ CATS.forEach(function(c){
   var h='<section class="cat" id="'+c.id+'" data-cat="'+c.id+'"><div class="cat-h"><h2>'+c.title+'</h2><span class="count"></span></div><p class="cat-desc">'+c.desc+'</p><div class="grid">';
   c.items.forEach(function(it){
     var ex=it[2]&&it[2]!=="—";
-    h+='<article class="card" data-s="'+esc((it[0]+' '+it[1]+' '+(it[2]||'')+' '+c.title).toLowerCase())+'"><div class="name">'+esc(it[0])+'</div><p>'+esc(it[1])+'</p>'+
+    h+='<article class="card" data-s="'+esc((it[0]+' '+it[1]+' '+(it[2]||'')+' '+c.title).toLowerCase())+'"><div class="name">'+esc(it[0])+'</div>'+(it[3]?'<span class="badge">'+esc(it[3])+'</span>':'')+'<p>'+esc(it[1])+'</p>'+
       (ex?'<div class="ex"><code'+(/^(\/|npx )/.test(it[2])?' class="cmd"':'')+'>'+esc(it[2])+'</code><button class="copy" type="button" data-copy="'+esc(it[2])+'" aria-label="نسخ: '+esc(it[2])+'">نسخ</button></div>':'')+'</article>';
   });
   sec.insertAdjacentHTML('beforeend',h+'</div></section>');
