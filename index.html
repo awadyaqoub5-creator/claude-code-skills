@@ -86,7 +86,7 @@ section.cat[hidden]{display:none}
 .card .ex{margin-top:auto;padding-top:8px;display:flex;gap:8px;align-items:center;min-width:0}
 .card .ex code{flex:1;min-width:0;background:var(--accent-soft);color:var(--fg);border-radius:6px;padding:6px 8px;font-size:13px;overflow-x:auto;white-space:nowrap;direction:rtl;unicode-bidi:plaintext;text-align:start;font-family:var(--f-body)}
 .card .ex code.cmd{font-family:var(--f-mono)}
-.badge{align-self:flex-start;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
+.badge{align-self:flex-end;direction:ltr;font-family:var(--f-mono);font-size:12px;padding:1px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
 button.copy{flex:0 0 auto;font:500 13px var(--f-body);color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:8px;min-height:36px;min-width:52px;padding:0 10px;cursor:pointer;transition:background-color .2s,color .2s}
 button.copy:hover{background:var(--accent-soft)}
 button.copy.ok{background:var(--accent);color:var(--surface);border-color:var(--accent)}
@@ -172,7 +172,7 @@ description: متى يستخدمه Claude
 
   <footer>
     <span><strong>يعقوب الظفيري</strong> · أدلة عملية في الذكاء الاصطناعي</span>
-    <span>المصدر: مواقع Anthropic الرسمية. الأسماء ممكن تتغير مع التحديثات</span>
+    <span>المصادر: مواقع Anthropic الرسمية و<a href="https://www.skills.sh" target="_blank" rel="noopener">skills.sh</a>. الأسماء ممكن تتغير مع التحديثات</span>
   </footer>
 </div>
 <p id="live" class="sr" aria-live="polite"></p>
@@ -223,6 +223,38 @@ var CATS=[
   ["claude-opus-5-5","Opus 5.5: للمهام الصعبة والتفكير العميق والبرمجة الكبيرة.","claude-opus-5-5"],
   ["claude-sonnet-5-5","Sonnet 5.5: توازن بين القوة والسرعة، يناسب أغلب الشغل.","claude-sonnet-5-5"],
   ["claude-haiku-5-5","Haiku 5.5: الأسرع والأرخص، للمهام الخفيفة والكثيرة.","claude-haiku-5-5"]
+ ]},
+ {id:"skillssh",title:"الأشهر في skills.sh",desc:"أكثر السكلز تثبيتاً في موقع skills.sh، مرتبة حسب عدد التثبيت. تشتغل مع Claude Code وCursor وCodex وغيرها.",items:[
+  ["find-skills","يساعد الـ agent يدوّر على سكلز ثانية ويركّبها.","npx skills add vercel-labs/skills","4.5M تثبيت · vercel-labs/skills"],
+  ["hyperframes-cli","أوامر الطرفية لمشاريع HyperFrames.","npx skills add heygen-com/hyperframes","1.7M تثبيت · heygen-com/hyperframes"],
+  ["agent-browser","يخلي الـ agent يتحكم بالمتصفح.","npx skills add vercel-labs/agent-browser","1.6M تثبيت · vercel-labs/agent-browser"],
+  ["hyperframes","يصنع فيديوهات مبنية على HTML.","npx skills add heygen-com/hyperframes","1.6M تثبيت · heygen-com/hyperframes"],
+  ["grill-me","يسألك أسئلة صعبة عشان يختبر خطتك قبل التنفيذ.","npx skills add mattpocock/skills","1.6M تثبيت · mattpocock/skills"],
+  ["design-mobile-apps","إرشادات تصميم واجهات تطبيقات الجوال.","npx skills add designed-by-ai/skills","1.6M تثبيت · designed-by-ai/skills"],
+  ["reddit-automation","أتمتة مهام Reddit.","npx skills add flowkit-labs/skills","1.5M تثبيت · flowkit-labs/skills"],
+  ["frontend-design","واجهات أمامية بتصميم مميز. من Anthropic.","npx skills add anthropics/skills","1.1M تثبيت · anthropics/skills"],
+  ["prototype","نماذج أولية سريعة.","npx skills add mattpocock/skills","1.1M تثبيت · mattpocock/skills"],
+  ["triage","يرتّب المهام والمشاكل حسب الأولوية.","npx skills add mattpocock/skills","1.1M تثبيت · mattpocock/skills"],
+  ["ui-taste","ذوق وتنسيق للواجهات.","—","1.1M تثبيت · uizze.sh"],
+  ["ai-video-generation","توليد فيديو بالذكاء الاصطناعي.","npx skills add 101-skills/superpowers","1.1M تثبيت · 101-skills/superpowers"],
+  ["domain-modeling","تصميم نموذج البيانات للمشروع.","npx skills add mattpocock/skills","1.0M تثبيت · mattpocock/skills"],
+  ["codebase-design","تنظيم وهيكلة الكود.","npx skills add mattpocock/skills","981K تثبيت · mattpocock/skills"],
+  ["teach","يشرح المفاهيم خطوة بخطوة.","npx skills add mattpocock/skills","975K تثبيت · mattpocock/skills"],
+  ["ai-image-generation","توليد صور بالذكاء الاصطناعي.","npx skills add magentosh/superpowers","961K تثبيت · magentosh/superpowers"],
+  ["diagnosing-bugs","منهجية لتتبع الأخطاء.","npx skills add mattpocock/skills","958K تثبيت · mattpocock/skills"],
+  ["lark-doc","التعامل مع مستندات Feishu/Lark.","—","930K تثبيت · open.feishu.cn"],
+  ["vercel-react-best-practices","أفضل ممارسات React وNext.js من Vercel.","npx skills add vercel-labs/agent-skills","921K تثبيت · vercel-labs/agent-skills"],
+  ["code-review","يراجع التعديلات في الكود.","npx skills add mattpocock/skills","919K تثبيت · mattpocock/skills"],
+  ["implement","ينفّذ الخطة المكتوبة خطوة بخطوة.","npx skills add mattpocock/skills","889K تثبيت · mattpocock/skills"],
+  ["web-design-guidelines","يراجع الواجهة حسب معايير الويب.","npx skills add vercel-labs/agent-skills","889K تثبيت · vercel-labs/agent-skills"],
+  ["remotion-best-practices","أفضل ممارسات صناعة الفيديو بـ Remotion.","npx skills add remotion-dev/skills","880K تثبيت · remotion-dev/skills"],
+  ["wayfinder","يساعدك تتنقّل داخل مشروع كبير.","npx skills add mattpocock/skills","834K تثبيت · mattpocock/skills"],
+  ["design-taste-frontend","ذوق تصميم للمواقع الاحترافية.","npx skills add leonxlnx/taste-skill","809K تثبيت · leonxlnx/taste-skill"],
+  ["ai-avatar-video","فيديوهات بأفاتار ذكاء اصطناعي.","npx skills add qu-skills/superpowers","789K تثبيت · qu-skills/superpowers"],
+  ["microsoft-foundry","إعداد Microsoft Foundry للذكاء الاصطناعي.","npx skills add microsoft/azure-skills","767K تثبيت · microsoft/azure-skills"],
+  ["azure-storage","إعداد التخزين على Azure.","npx skills add microsoft/azure-skills","755K تثبيت · microsoft/azure-skills"],
+  ["azure-cloud-migrate","نقل المشاريع إلى Azure.","npx skills add microsoft/azure-skills","702K تثبيت · microsoft/azure-skills"],
+  ["improve-animations","تحسين الأنيميشن في الواجهات.","npx skills add emilkowalski/skills","291K تثبيت · emilkowalski/skills"]
  ]},
  {id:"tools",title:"الأدوات المدمجة",desc:"الأدوات اللي يستخدمها Claude بنفسه وهو يشتغل. ما تحتاج تكتبها، تطلب الشي بكلامك وهو يختار الأداة.",items:[
   ["Read","يقرأ أي ملف: كود، صور، PDF، ودفاتر Jupyter.","اقرأ ملف package.json"],
@@ -323,7 +355,7 @@ CATS.forEach(function(c){
   c.items.forEach(function(it){
     var ex=it[2]&&it[2]!=="—";
     h+='<article class="card" data-s="'+esc((it[0]+' '+it[1]+' '+(it[2]||'')+' '+c.title).toLowerCase())+'"><div class="name">'+esc(it[0])+'</div><p>'+esc(it[1])+'</p>'+
-      (ex?'<div class="ex"><code'+(/^\//.test(it[2])?' class="cmd"':'')+'>'+esc(it[2])+'</code><button class="copy" type="button" data-copy="'+esc(it[2])+'" aria-label="نسخ: '+esc(it[2])+'">نسخ</button></div>':'')+'</article>';
+      (ex?'<div class="ex"><code'+(/^(\/|npx )/.test(it[2])?' class="cmd"':'')+'>'+esc(it[2])+'</code><button class="copy" type="button" data-copy="'+esc(it[2])+'" aria-label="نسخ: '+esc(it[2])+'">نسخ</button></div>':'')+'</article>';
   });
   sec.insertAdjacentHTML('beforeend',h+'</div></section>');
 });
