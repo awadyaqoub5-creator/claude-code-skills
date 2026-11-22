@@ -16,8 +16,9 @@ EXTERNAL = [{
     "img": "../img/agents-team-768.webp",
 }]
 
-# spread dates backwards one day apart, newest first
-start = datetime.date(2026, 11, 21)
+# real publish date of these batches (from git); give later articles their own "date" in the JSON
+SITE = "https://awadyaqoub5-creator.github.io/claude-code-skills/"
+PUBLISHED = datetime.date(2026, 11, 21)
 MONTHS = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"]
 def ar_date(d): return f"{d.day} {MONTHS[d.month-1]} {d.year}"
 
@@ -32,7 +33,14 @@ SOCIAL = f'''<div class="social">
       <a class="soc ph" href="tel:+966544956205">{PH}اتصال</a>
     </div>'''
 
-def head(title, desc):
+def head(title, desc, path, img, published=None):
+    url, image = SITE + path, SITE + img
+    ld = {"@context": "https://schema.org", "@type": "BlogPosting" if published else "Blog",
+          "headline": title.split(" | ")[0], "description": desc, "url": url, "image": image, "inLanguage": "ar",
+          "author": {"@type": "Person", "name": "يعقوب الظفيري", "url": SITE}}
+    if published:
+        ld["datePublished"] = published
+    ld_json = json.dumps(ld, ensure_ascii=False).replace("<", chr(92) + "u003c")
     return f'''<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -40,6 +48,13 @@ def head(title, desc):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="{"article" if published else "website"}">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{image}">
+<script type="application/ld+json">{ld_json}</script>
 {FONTS}
 <link rel="stylesheet" href="blog.css">
 </head>
@@ -69,9 +84,10 @@ FOOTER = f'''
 # --- article pages
 for i, p in enumerate(posts):
     p["img"] = f"img/{p['slug']}-640.webp"
-    d = start - datetime.timedelta(days=i + 1)
+    d = datetime.date.fromisoformat(p["date"]) if p.get("date") else PUBLISHED
+    p["iso"] = d.isoformat()
     p["date"] = ar_date(d)
-    page = head(f"{p['title']} | يعقوب الظفيري", p["summary"]) + f'''
+    page = head(f"{p['title']} | يعقوب الظفيري", p["summary"], "blog/" + p["slug"] + ".html", "blog/img/" + p["slug"] + ".webp", p["iso"]) + f'''
 <div class="wrap">{header("post")}
   <article>
     <div class="meta"><span class="tag">{html.escape(p["tag"])}</span><span>{p["date"]}</span><span>قراءة {p["minutes"]} دقائق</span></div>
@@ -102,7 +118,7 @@ for p in EXTERNAL + posts:
 chips = '<button class="chip" type="button" data-f="all" aria-pressed="true">الكل</button>' + "".join(
     f'<button class="chip" type="button" data-f="{html.escape(t)}" aria-pressed="false">{html.escape(t)}</button>' for t in tags)
 
-index = head("مدونة الذكاء الاصطناعي | يعقوب الظفيري", "مقالات عملية بالعربي عن Claude وأدوات الذكاء الاصطناعي.") + f'''
+index = head("مدونة الذكاء الاصطناعي | يعقوب الظفيري", "مقالات عملية بالعربي عن Claude وأدوات الذكاء الاصطناعي.", "blog/", "img/agents-team-768.webp") + f'''
 <style>
 .chips{{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}}
 .chip{{font:500 14px var(--f-body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;min-height:40px;padding:0 16px;cursor:pointer;transition:background-color .2s,border-color .2s}}
@@ -130,4 +146,9 @@ document.getElementById('chips').addEventListener('click',function(e){{
 </html>
 '''
 open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(index)
+NL = chr(10)
+locs = [SITE, SITE + "blog/"] + [SITE + "blog/" + p["slug"] + ".html" for p in posts]
+open(os.path.join(HERE, "..", "sitemap.xml"), "w", encoding="utf-8").write(
+    '<?xml version="1.0" encoding="UTF-8"?>' + NL + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + NL
+    + "".join(f"<url><loc>{u}</loc></url>{NL}" for u in locs) + "</urlset>" + NL)
 print("built", len(posts), "articles +", len(EXTERNAL), "external; total cards", len(cards))
